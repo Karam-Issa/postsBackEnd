@@ -6,6 +6,7 @@ import schemas as _schemas
 import services as _services
 from fastapi import Header
 import jwt
+import asyncio
 
 _JWT_SECRET = "thisisnotverysafe"
 
@@ -15,8 +16,7 @@ app = _fastapi.FastAPI()
 
 
 
-
-
+asyncio.create_task(_services.consume())
 
 
 @app.post("/api/v1/createPost", response_model=_schemas.Post)

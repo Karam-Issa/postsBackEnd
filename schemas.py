@@ -16,3 +16,9 @@ class Post(_PostBase):
 
     class Config:
         orm_mode = True
+
+
+class UserProducer(_pydantic.BaseModel):
+    id : int
+    first_name: str
+    last_name :str

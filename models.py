@@ -12,3 +12,5 @@ class Post(_database.Base):
     owner_id = _sql.Column(_sql.Integer, index=True)
     post_text = _sql.Column(_sql.String, index=True)
     date_created = _sql.Column(_sql.DateTime, default=_dt.datetime.utcnow)
+
+

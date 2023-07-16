@@ -66,3 +66,11 @@ async def get_user_posts(authorization: str = Header(), db: _orm.Session = _fast
             detail="Invalid JWT token"
         )
     return await _services.get_user_posts(user_id=user_id, db=db)       
+
+
+
+@app.get("/api/v1/getAllPosts")
+async def get_all_posts(db: _orm.Session = _fastapi.Depends(_services.get_db)):
+    return await _services.get_all_posts(db=db)
+
+

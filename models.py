@@ -14,3 +14,9 @@ class Post(_database.Base):
     date_created = _sql.Column(_sql.DateTime, default=_dt.datetime.utcnow)
 
 
+class userInformationPost(_database.Base):
+    __tablename__ = "userInformationPost"
+    id =_sql.Column(_sql.Integer, primary_key=True, index=True)
+    owner_id = _sql.Column(_sql.Integer, index=True)
+    first_name = _sql.Column(_sql.String,index=True)
+    last_name = _sql.Column(_sql.String,index=True)
